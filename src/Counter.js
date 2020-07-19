@@ -1,11 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function Counter(){
+    
+    const [number, setNumber] = useState(0);
+
+    const Increase = () => {
+        setNumber(number + 1);
+    }
+
+    const Decrease = () => {
+        setNumber(number - 1);
+    }
+
     return (
         <div>
-            <h1>0</h1>
-            <button>+1</button>
-            <button>-1</button>
+            <h1>{number}</h1>
+            <button onClick={Increase}>+1</button>
+            <button onClick={Decrease}>-1</button>
         </div>
     )
 }
